@@ -222,7 +222,7 @@ router.get('/task13/:title', async (req, res) => {
 
     try {
         // Utilisation de Axios avec Promise (Async/Await)
-        const response = await axios.get(`${API_URL}/isbn/${title}`);
+        const response = await axios.get(`${API_URL}/title/${title}`);
         
         // Si le livre existe, retourner les données
         if (response.data) {
