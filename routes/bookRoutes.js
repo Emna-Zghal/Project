@@ -183,10 +183,9 @@ router.get('/task11/:isbn', async (req, res) => {
     const isbn = req.params.isbn;
 
     try {
-        // Utilisation de Axios avec Promise (Async/Await)
+      
         const response = await axios.get(`${API_URL}/isbn/${isbn}`);
-        
-        // Si le livre existe, retourner les données
+      
         if (response.data) {
             res.status(200).json(response.data);
         } else {
@@ -203,10 +202,9 @@ router.get('/task12/:author', async (req, res) => {
     const author = req.params.author;
 
     try {
-        // Utilisation de Axios avec Promise (Async/Await)
         const response = await axios.get(`${API_URL}/author/${author}`);
         
-        // Si le livre existe, retourner les données
+
         if (response.data) {
             res.status(200).json(response.data);
         } else {
@@ -222,10 +220,9 @@ router.get('/task13/:title', async (req, res) => {
     const title = req.params.title;
 
     try {
-        // Utilisation de Axios avec Promise (Async/Await)
+
         const response = await axios.get(`${API_URL}/title/${title}`);
         
-        // Si le livre existe, retourner les données
         if (response.data) {
             res.status(200).json(response.data);
         } else {
