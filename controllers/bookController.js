@@ -35,8 +35,8 @@ async function getBookByTitle(title){
     return(book);
 }
 
-async function getBookReview(bookId){
-    const book = await bookModel.findById(bookId).select('reviews');
+async function getBookReview(isbn){
+    const book = await bookModel.findOne({isbn: isbn});
     if (!book) {
         throw new Error('Book not found');
     }

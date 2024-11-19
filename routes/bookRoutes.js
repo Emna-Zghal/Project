@@ -70,10 +70,11 @@ router.get('/title/:title', async (req, res) => {
 
 //Task 5: Get book Review
 
-router.get('/reviews/:id', async (req, res) =>{
+router.get('/reviews/:isbn', async (req, res) =>{
 
     try{
-        const reviews = await bookController.getBookReview(req.params.id);
+        
+        const reviews = await bookController.getBookReview(req.params.isbn);
         res.status(200).json(reviews);
     }catch(err){
         if (err.message === 'Book not found') {
